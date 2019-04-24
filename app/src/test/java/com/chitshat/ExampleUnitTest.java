@@ -1,4 +1,4 @@
-package com.scrum.plan.chitshat;
+package com.chitshat;
 
 import org.junit.Test;
 

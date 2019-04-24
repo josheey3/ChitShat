@@ -1,4 +1,4 @@
-package com.scrum.plan.chitshat;
+package com.chitshat;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
