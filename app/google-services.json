@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1026427188265",
+    "firebase_url": "https://chitshat1.firebaseio.com",
+    "project_id": "chitshat1",
+    "storage_bucket": "chitshat1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026427188265:android:20978c075104f6c0",
+        "android_client_info": {
+          "package_name": "com.chitshat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026427188265-8cqisbec544cqkgg9j9d9ahgemcbv548.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-0sc1Urd5feor80QHjYiBuN3aypG4WoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026427188265-8cqisbec544cqkgg9j9d9ahgemcbv548.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

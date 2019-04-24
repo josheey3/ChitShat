@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.scrum.plan.chitshat"
+        applicationId "com.chitshat"
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
@@ -25,4 +25,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Google says add this
+    implementation 'com.google.firebase:firebase-core:16.0.1'
 }
+
+// And add this
+apply plugin: 'com.google.gms.google-services'
