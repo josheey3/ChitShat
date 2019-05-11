@@ -13,7 +13,7 @@ buildscript {
         // in the individual module build.gradle files
 
         // Google says put this here
-        classpath 'com.google.gms:google-services:4.0.1'
+        classpath 'com.google.gms:google-services:4.2.0'
     }
 }
 
