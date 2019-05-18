@@ -21,6 +21,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -41,9 +43,11 @@ public class SignInActivity extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
 
     private static final String TAG = "SignInActivity";
+    private static final String googleSignInText = "Sign in with Google";
     private static final int RC_SIGN_IN = 9001;
 
     private SignInButton mSignInButton;
+    private Button mAnonymousSignInButton, mSettingsButton;
 
     private GoogleApiClient mGoogleApiClient;
 
@@ -56,10 +60,14 @@ public class SignInActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_sign_in);
 
         // Assign fields
-        mSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        mSignInButton = findViewById(R.id.btn_google_sign_in);
+        mAnonymousSignInButton = findViewById(R.id.btn_anonymous_sign_in);
+        mSettingsButton = findViewById(R.id.btn_settings);
 
         // Set click listeners
         mSignInButton.setOnClickListener(this);
+        mAnonymousSignInButton.setOnClickListener(this);
+        mSettingsButton.setOnClickListener(this);
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -73,13 +81,30 @@ public class SignInActivity extends AppCompatActivity implements
 
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+        // The most complicated way to change the google sign in button text
+        // Find the TextView that is inside of the SignInButton and set its text
+        for (int i = 0; i < mSignInButton.getChildCount(); i++) {
+            View v = mSignInButton.getChildAt(i);
+            if (v instanceof TextView) {
+                TextView tv = (TextView) v;
+                tv.setText(googleSignInText);
+                return;
+            }
+        }
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.sign_in_button:
+            case R.id.btn_google_sign_in:
                 signIn();
+                break;
+            case R.id.btn_anonymous_sign_in:
+                Toast.makeText(SignInActivity.this, "Coming soon...", Toast.LENGTH_LONG).show();
+                break;
+            case R.id.btn_settings:
+                Toast.makeText(SignInActivity.this, "Coming soon...", Toast.LENGTH_LONG).show();
                 break;
         }
     }
