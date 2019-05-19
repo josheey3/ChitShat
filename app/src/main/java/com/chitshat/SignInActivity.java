@@ -37,6 +37,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class SignInActivity extends AppCompatActivity implements
@@ -101,7 +102,8 @@ public class SignInActivity extends AppCompatActivity implements
                 signIn();
                 break;
             case R.id.btn_anonymous_sign_in:
-                Toast.makeText(SignInActivity.this, "Coming soon...", Toast.LENGTH_LONG).show();
+                anonSignIn();
+                //Toast.makeText(SignInActivity.this, "Coming soon...", Toast.LENGTH_LONG).show();
                 break;
             case R.id.btn_settings:
                 Toast.makeText(SignInActivity.this, "Coming soon...", Toast.LENGTH_LONG).show();
@@ -162,5 +164,28 @@ public class SignInActivity extends AppCompatActivity implements
     private void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    private void anonSignIn() {
+        mFirebaseAuth.signInAnonymously()
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInAnonymously:success");
+                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                            startActivity(new Intent(SignInActivity.this, LobbyActivity.class));
+                            finish();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInAnonymously:failure", task.getException());
+                            Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                        // ...
+                    }
+                });
     }
 }
