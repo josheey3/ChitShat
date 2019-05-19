@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LobbyActivity" android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".LobbyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,7 +21,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.chitshat.LobbyActivity" />
         </activity>
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignInActivity" android:theme="@style/SignInTheme"/>
     </application>
 
 </manifest>
