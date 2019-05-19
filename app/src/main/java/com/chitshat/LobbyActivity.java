@@ -69,7 +69,11 @@ public class LobbyActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent chatIntent = new Intent(LobbyActivity.this, ChatActivity.class);
-                chatIntent.putExtra("username", mUsername);
+                if (mUsername == null) {
+                    chatIntent.putExtra("username", "Anonymous");
+                } else {
+                    chatIntent.putExtra("username", mUsername);
+                }
                 startActivity(chatIntent);
                 finish();
             }
