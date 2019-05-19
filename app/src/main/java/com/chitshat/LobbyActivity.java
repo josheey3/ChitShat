@@ -97,6 +97,8 @@ public class LobbyActivity extends AppCompatActivity
                 startActivity(new Intent(this, SignInActivity.class));
                 finish();
                 return true;
+            case R.id.settings_menu:
+                Toast.makeText(this, "Coming soon...", Toast.LENGTH_LONG).show();
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -300,12 +300,18 @@ public class ChatActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
             case R.id.sign_out_menu:
                 mFirebaseAuth.signOut();
                 Auth.GoogleSignInApi.signOut(mGoogleApiClient);
                 mUsername = ANONYMOUS;
                 startActivity(new Intent(this, SignInActivity.class));
                 finish();
+                return true;
+            case R.id.settings_menu:
+                Toast.makeText(this, "Coming soon...", Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -384,5 +390,17 @@ public class ChatActivity extends AppCompatActivity
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent lobbyIntent = new Intent(ChatActivity.this, LobbyActivity.class);
+        if (mUsername == null) {
+            lobbyIntent.putExtra("username", "Anonymous");
+        } else {
+            lobbyIntent.putExtra("username", mUsername);
+        }
+        startActivity(lobbyIntent);
+        finish();
     }
 }

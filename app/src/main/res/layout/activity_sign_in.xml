@@ -55,7 +55,7 @@
         android:layout_marginEnd="100dp"
         android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
         android:drawableStart="@drawable/ic_settings"
-        android:text="@string/btn_settings"
+        android:text="@string/settings"
         android:textAllCaps="false"
         android:textColor="@color/common_google_signin_btn_text_light"
         android:textStyle="bold"
