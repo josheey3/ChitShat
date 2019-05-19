@@ -30,22 +30,27 @@
             android:id="@+id/addMessageImageView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            ads:srcCompat="@drawable/ic_add_black_24dp"/>
+            ads:srcCompat="@drawable/ic_add_black_24dp"
+            android:tint="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/messageEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:hint="@string/message_edit_text"
+            android:foregroundTint="@color/colorPrimary"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/sendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:enabled="false"
-            android:text="SEND"/>
+            android:src="@drawable/ic_send"
+            android:tint="@color/colorPrimary"
+            android:background="@null"/>
 
     </LinearLayout>
 
