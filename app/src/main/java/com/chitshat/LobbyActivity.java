@@ -68,10 +68,10 @@ public class LobbyActivity extends AppCompatActivity
         open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LobbyActivity.this, ChatActivity.class));
+                Intent chatIntent = new Intent(LobbyActivity.this, ChatActivity.class);
+                chatIntent.putExtra("username", mUsername);
+                startActivity(chatIntent);
                 finish();
-                //Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-                //startActivityForResult(signInIntent, RC_SIGN_IN); //this, needs isFinishing()
             }
         });
     }
