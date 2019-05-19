@@ -110,7 +110,9 @@ public class ChatActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lobby);
+        setContentView(R.layout.activity_chat);
+        Intent lobbyIntent = getIntent();
+        mUsername = lobbyIntent.getStringExtra("username");
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         // Initialize ProgressBar and RecyclerView.

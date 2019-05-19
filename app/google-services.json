@@ -15,11 +15,56 @@
       },
       "oauth_client": [
         {
+          "client_id": "1026427188265-pnppji04rebvvmks632bs9q9t21ec157.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chitshat",
+            "certificate_hash": "dd92c03ef93ca5b2392671d073a40b44dc5dddf4"
+          }
+        },
+        {
           "client_id": "1026427188265-548lkqhpuplc87cpf8fi9ckl1rsaibu3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.chitshat",
             "certificate_hash": "347ef931988de8b9767ce23bd3cc1bd46ec93ae1"
+          }
+        },
+        {
+          "client_id": "1026427188265-8cqisbec544cqkgg9j9d9ahgemcbv548.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-0sc1Urd5feor80QHjYiBuN3aypG4WoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026427188265-8cqisbec544cqkgg9j9d9ahgemcbv548.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026427188265:android:0f300045ae826574",
+        "android_client_info": {
+          "package_name": "com.scrum.plan.chitshat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026427188265-2io41ralhm8ot4cq14pv5vratgp4hki6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.scrum.plan.chitshat",
+            "certificate_hash": "dd92c03ef93ca5b2392671d073a40b44dc5dddf4"
           }
         },
         {
